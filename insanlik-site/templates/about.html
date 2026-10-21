@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% set a = t.about %}
+{% block title %}{{ t.nav.about }}{% endblock %}
+{% block description %}{{ a.intro }}{% endblock %}
+{% block content %}
+{{ m.page_hero(a.title, a.intro, a.badge, a.title_highlight) }}
+
+<section class="section">
+  <div class="container vm-cards vm-wide">
+    {% for v in a.vision_mission %}
+    <div class="vm-card">
+      <span class="vm-icon">{{ m.icon('eye' if loop.first else 'target') }}</span>
+      <h2 class="h3">{{ v.title }}</h2>
+      <p>{{ v.text }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    {{ m.section_head(a['values'].eyebrow, a['values'].title) }}
+    <div class="grid grid-4">
+      {% set vicons = ['heart', 'scale', 'eye', 'award'] %}
+      {% for v in a['values']['items'] %}
+      <div class="value-card">
+        <span class="vm-icon">{{ m.icon(vicons[loop.index0 % 4]) }}</span>
+        <h3>{{ v.title }}</h3>
+        <p>{{ v.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {{ m.section_head(a.goals.eyebrow, a.goals.title) }}
+    <ol class="goals">
+      {% for g in a.goals['items'] %}
+      {% set parts = g.split(':', 1) %}
+      <li>
+        <span class="goal-num">{{ '%02d'|format(loop.index) }}</span>
+        <div>{% if parts|length == 2 and parts[0]|length < 140 %}<strong>{{ parts[0] }}</strong><p>{{ parts[1]|trim }}</p>{% else %}<strong>{{ g }}</strong>{% endif %}</div>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    {% set o = a.org %}
+    {{ m.section_head(o.eyebrow, o.title, o.text) }}
+    <div class="org">
+      <div class="org-top"><span class="org-box l1">{{ o.board }}</span></div>
+      <div class="org-top"><span class="org-box l2">{{ o.director }}</span></div>
+      <div class="org-cols">
+        <div class="org-col">
+          <span class="org-box l3">{{ m.icon('building') }} {{ o.hq.name }}</span>
+          {% for d in o.hq.departments %}
+          <div class="org-dept">
+            <strong>{{ d.name }}</strong>
+            <ul>{% for u in d.units %}<li>{{ u }}</li>{% endfor %}</ul>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="org-col">
+          <span class="org-box l3">{{ m.icon('shield') }} {{ o.compliance }}</span>
+        </div>
+        <div class="org-col">
+          <span class="org-box l3">{{ m.icon('globe') }} {{ o.field.name }}</span>
+          <div class="org-dept">
+            <ul>{% for f in o.field.offices %}<li>{{ f }}</li>{% endfor %}</ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container geo">
+    <div>
+      {{ m.section_head(a.geo.eyebrow, a.geo.title, a.geo.text, center=False) }}
+      <h3 class="h4">{{ a.geo.legend }}</h3>
+      <ul class="chips">
+        <li class="chip chip-hq">{{ a.geo.hq }}</li>
+        {% for c in a.geo.countries %}<li class="chip">{{ c }}</li>{% endfor %}
+      </ul>
+    </div>
+    <img class="map" src="/img/about/world-map.jpg" alt="{{ a.geo.title }}" loading="lazy" width="1024" height="1024">
+  </div>
+</section>
+
+{{ m.donate_band(t, lang) }}
+{% endblock %}

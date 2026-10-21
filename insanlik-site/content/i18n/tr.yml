@@ -1,0 +1,239 @@
+# Texts for the Türkçe version of the site.
+# Change any text after the colon; keep the indentation as it is.
+
+lang_name: Türkçe
+dir: ltr
+skip: Ana içeriğe geç
+menu: Menü
+close: Kapat
+nav:
+  home: Ana Sayfa
+  about: Biz Kimiz
+  programs: Programlarımız
+  projects: Projelerimiz
+  media: Medya Merkezi
+  news: Haberlerimiz
+  contact: İletişim
+  donate: Bağış Yap
+  reports: Makaleler ve Raporlar
+  support: Mesajımızı Destekleyin
+  bank: Banka Hesaplarımız
+read_more: Devamını oku
+view_all: Tümünü gör
+back_news: Haberlere Dön
+back_projects: Tüm projeler
+back_programs: Tüm programlar
+donate_now: Bağış Yap
+support_program: Bu programı destekleyin
+instagram: Instagram'da görüntüle
+gallery: Fotoğraf Galerisi
+program_goals: Programın Hedefleri
+program_projects: Bu programdaki projeler
+no_projects: Bu dilde henüz yayınlanmış proje yok.
+no_news: Bu dilde henüz yayınlanmış haber yok.
+no_media: Henüz yayınlanmış fotoğraf yok.
+filter_all: Tümü
+copy_btn: Kopyala
+copied: Kopyalandı
+open_map: Google Haritalar'da aç
+follow: Bizi takip edin
+rights: Tüm Hakları Saklıdır
+programs_page:
+  title: Programlarımız
+  intro: İnsani çalışma alanlarımız.
+donate_page:
+  title: Mesajımızı Destekleyin
+  intro: İnsani yardım çalışmalarımızı aşağıdaki banka hesaplarına havale/EFT yaparak destekleyebilirsiniz.
+  bank_title: Banka Bilgileri
+  accounts_title: Hesap Bilgileri
+  help: Bağışla ilgili sorularınız için bize WhatsApp'tan yazabilirsiniz.
+notfound:
+  title: Sayfa bulunamadı
+  text: Aradığınız sayfa mevcut değil veya taşınmış.
+  home: Ana sayfaya dön
+project:
+  overview: Projeye Genel Bakış
+  objectives: Projenin Stratejik Hedefleri
+  specs: Proje Tanımlama Kartı
+  impact: Bağışınızın Etkisi
+  program: Ana Program
+  place: Coğrafi Konum
+footer:
+  quick_links: Hızlı Bağlantılar
+  tagline: İnsani ortaklık… sürdürülebilir etkiyle
+  text: Merkezi İstanbul, Türkiye'de bulunan uluslararası bir insani yardım kuruluşu. Şubat 2026'dan bu yana Orta Doğu ve Afrika'da çatışma ve afetlerden etkilenen toplulukları desteklemektedir.
+home:
+  hero_highlight: İnsanlık Eli
+  hero_title: Etki Yaratmak. Güveni Korumak
+  hero_sub: İnsanlık Eli Yardım ve Dayanışma Derneği (İnsanlık Eli), uluslararası insani yardım çalışmalarına adanmış, kâr amacı gütmeyen bir Türk yardım kuruluşudur. Savaşlar, yoksulluk, afetler, salgın hastalıklar ve yerinden edilmelerden etkilenen hassas toplulukları destekler. Yerel saha ekipleri ve güvenilir ortakları aracılığıyla dernek; temel yardımları yüksek profesyonellik, şeffaflık ve insan onuruna saygı ilkesiyle ulaştırır.
+  hero_cta: Projelerimizi Keşfedin
+  trust:
+  - Türkiye'de Resmi Lisanslı
+  - '%100 Mali Şeffaflık'
+  - 12 Aktif Ülke
+  counters:
+  - value: 48000
+    suffix: +
+    label: Faydalanıcı Birey Sayısı
+    sub: Doğrudan ve belgelenmiş etki
+  - value: 320
+    suffix: +
+    label: Tamamlanan Projeler
+    sub: Kuruluştan bu yana
+  - value: 12
+    suffix: ''
+    label: Aktif Coğrafi Bölgeler
+    sub: Orta Doğu ve Afrika
+  - value: 45
+    suffix: +
+    label: Ortak Sayısı
+    sub: Yerel ve uluslararası ortaklar
+  about:
+    eyebrow: Hakkımızda
+    title: 'İnsanlık Eli: Etki Yaratır, Güveni Korur.'
+    text: 'İnsanlık Eli Yardımlaşma ve Dayanışma Derneği, Türkiye''de kayıtlı (Kütük No: 34-296-189), kâr amacı gütmeyen bir insani yardım kuruluşudur. Kendisini uluslararası insani yardım çalışmalarına adamış olup; savaşlar, yoksulluk, doğal afetler, salgın hastalıklar ve yerinden edilmelerle karşı karşıya kalan toplulukları ve hassas grupları desteklemektedir. Dernek; yardımları profesyonellik, şeffaflık ve insan onuruna saygı ilkeleri doğrultusunda ulaştırmak amacıyla saha ekipleri ve güvenilir ortakları aracılığıyla faaliyet göstermektedir.'
+    more: İnsanlık Eli Derneği hakkında daha fazlasını okuyun
+  vision_mission:
+  - title: Vizyonumuz
+    text: Her insanın güvenli ve onurlu bir yaşam için temel haklara ve fırsatlara sahip olduğu bir dünya.
+  - title: Misyonumuz
+    text: Adalet, şeffaflık ve profesyonellik üzerine kurulu insani yardım ve kalkınma programları aracılığıyla insanlık onurunu korumak ve temel ihtiyaçları karşılamak için çalışıyoruz.
+  programs:
+    eyebrow: Ana Programlarımız
+    title: İnsani Çalışma Alanlarımız
+    text: Etkilenen toplulukların temel ihtiyaçlarını karşılayan beş stratejik alanda çalışıyoruz.
+  news:
+    eyebrow: Haberlerimiz
+    title: Sahadaki Son Gelişmeler ve Diplomatik Faaliyetler
+    text: Önemli ziyaretler, anlaşmalar ve tamamlanan projelerle ilgili sürekli takibimizi izleyin
+about:
+  badge: Şubat 2026'da kuruldu
+  title: Etkili Çözümler Sunar. Güveni Korur
+  title_highlight: Güveni Korur
+  intro: İnsanlık Eli Yardımlaşma ve Dayanışma Derneği, Türkiye Cumhuriyeti'nde 34-296-189 numarasıyla kayıtlı, uluslararası düzeyde insani yardım ve kalkınma çalışmaları yürüten, kâr amacı gütmeyen bir sivil toplum kuruluşudur.
+  vision_mission:
+  - title: Vizyonumuz
+    text: Açlık, hastalık ve adaletsizlikten uzak, adalet ve eşitliğin hakim olduğu, her insanın onur ve güvenli bir yaşam için temel fırsatlara sahip olduğu bir dünya.
+  - title: Misyonumuz
+    text: Adalet ve tam şeffaflık üzerine kurulu sürdürülebilir yardım ve kalkınma programları aracılığıyla insan onurunu korumak ve savunmasız toplulukları güçlendirmek.
+  values:
+    eyebrow: Temel İlkelerimiz
+    title: Sahada Bizi Yönlendiren Değerler
+    items:
+    - title: İnsan Onuru
+      text: Faaliyetlerimizin merkezinde insan onuru yer alır. Her bireye saygıyla yaklaşır, yardımın hiçbir koşulda aşağılanma veya istismar aracına dönüşmemesine özen gösteririz.
+    - title: Adalet ve Ayrımcılık Yapmama
+      text: Din, ırk, milliyet, cinsiyet veya sosyal statü ayrımı gözetmeksizin ihtiyaç sahibi herkese eşit ve adil şekilde ulaşmayı ilke ediniriz.
+    - title: Şeffaflık
+      text: Mali ve idari kaynaklarımızı şeffaf biçimde yönetir; faaliyetlerimiz ve sonuçlarımız hakkında destekçilerimiz ve paydaşlarımızı düzenli olarak bilgilendiririz.
+    - title: Kalite ve Etki
+      text: Gerçek ihtiyaçlara dayanan, ölçülebilir ve sürdürülebilir sonuçlar üreten programlar tasarlar ve uygularız. Faaliyetlerimizin başarısını yalnızca ulaşılan rakamlarla değil, bireylerin ve toplumların yaşamlarında oluşturduğu kalıcı etkiyle değerlendiririz.
+  goals:
+    eyebrow: Stratejik Hedefler
+    title: Geleceği Şekillendiren Altı Hedef
+    items:
+    - 'Hızlı ve Etkin İnsani Müdahale: Savaş, afet ve krizlerden etkilenen bölgelerde gıda, barınma ve sağlık hizmeti sunarak, acil durumlarda hızlı ve etkili müdahale kapasitesini artırmak.'
+    - 'Kırılgan Grupların Yaşam Kalitesini İyileştirmek: Eğitim, sağlık ve psikososyal programlar aracılığıyla bireylerin ve ailelerin yaşam koşullarının iyileştirilmesine katkı sağlamak.'
+    - 'Aileleri Güçlendirmek ve Dayanıklılıklarını Artırmak: Geçim kaynakları ve kalkınma programlarıyla ailelerin kendi kendine yeterliliklerini desteklemek ve krizlerin olumsuz etkilerini azaltmak.'
+    - 'İş Birliği ve Etki Alanını Genişletmek: Ulusal ve uluslararası paydaşlarla güçlü ortaklıklar kurarak daha fazla ihtiyaç sahibine ulaşmak ve insani yardım çalışmalarının etkisini artırmak.'
+    - 'Kurumsal Kapasiteyi Güçlendirmek: Etkin yönetişim, izleme ve değerlendirme sistemleri aracılığıyla kurumsal kapasiteyi geliştirmek, kaynakların verimli kullanımını sağlamak ve paydaş güvenini güçlendirmek.'
+    - Kurumsal performansı geliştirmek ve en yüksek yönetişim ve şeffaflık standartlarını sağlamak.
+  org:
+    eyebrow: Yönetişimimiz
+    title: Organizasyon Yapısı
+    text: Hızlı karar almayı ve her seviyede hesap verebilirliği sağlayan net bir yönetim yapısı.
+    board: Yönetim Kurulu
+    director: İcra Direktörü
+    hq:
+      name: Genel Merkez
+      departments:
+      - name: Finans Departmanı
+        units:
+        - Mali Raporlama ve Hibe Uyum Birimi
+        - Muhasebe ve Hazine Bölümü
+      - name: Programlar Departmanı
+        units:
+        - Program
+        - İzleme ve Değerlendirme (M&E) Birimi
+      - name: Operasyonlar ve Lojistik Departmanı
+        units:
+        - İnsan Kaynakları (İK) Bölümü
+        - BT ve Veri Güvenliği Birimi
+        - Satın Alma ve Tedarik Zinciri Bölümü
+      - name: Uluslararası İlişkiler ve Kaynak Geliştirme Departmanı
+        units:
+        - Medya ve İletişim Bölümü
+        - Bağışçı İlişkileri Bölümü
+    compliance: Uyum ve İç Denetim Ofisi
+    field:
+      name: Saha Ofisleri ve Bölgesel Koordinasyon
+      offices:
+      - Türkiye ve Suriye Ofisi
+      - Mısır Saha Ofisi
+      - Gazze Saha Ofisi
+      - Afrika Misyonları Masası
+  geo:
+    eyebrow: Coğrafi Varlık
+    title: Etkiyi Nerede Yaratıyoruz?
+    text: İnsanlık, Türkiye'deki merkezinden faaliyet göstererek operasyonlarını en çok ihtiyaç duyulan bölgelere yayıyor.
+    legend: Çalıştığımız Ülkeler
+    hq: 🇹🇷 Türkiye — Genel Merkez
+    countries:
+    - 🇸🇾 Suriye
+    - 🇾🇪 Yemen
+    - 🇸🇴 Somali
+    - 🇸🇩 Sudan
+    - 🇵🇸 Filistin
+    - 🇱🇧 Lübnan
+    - 🇱🇾 Libya
+    - 🇮🇶 Irak
+    - 🇲🇦 Fas
+    - 🇯🇴 Ürdün
+    - 🇪🇬 Mısır
+contact:
+  title: Sizi Dinliyor & Umut Paylaşıyoruz
+  title_highlight: Umut
+  intro: Kanallarımız insanlığa hizmet etmek için sorularınıza ve cömert bağışlarınıza açık.
+  eyebrow: İletişim Kanalları
+  section_title: Bağlantı Kurmaktan Her Zaman Mutluluk Duyarız
+  section_sub: Ekibimiz sorularınızı yanıtlamak ve gerekli desteği sağlamak için burada.
+  details:
+    title: Direkt İletişim Bilgileri
+    rows:
+    - label: 'Telefon:'
+      value: +90 553 547 75 38
+    - label: 'E-posta:'
+      value: info@insanlikeli.org
+    - label: 'Adres:'
+      value: Üsküdar, İstanbul, Türkiye
+    button: WhatsApp ile İletişime Geçin
+  hours:
+    title: Resmi Çalışma Saatleri
+    rows:
+    - label: 'Pazartesi - Cuma:'
+      value: 09:00 - 18:00
+    - label: 'Cumartesi - Pazar:'
+      value: Hafta Sonu Tatili
+    button: E-posta Gönder
+projects_page:
+  title: Projelerimiz
+  intro: Derneğin tüm program ve sektörlerdeki projeleri
+news_page:
+  title: Son Gelişmeler ve Haberler
+  intro: Önemli ziyaretleri, anlaşmaları ve tamamlanan projeleri sürekli takip edin
+media_page:
+  title: Sahadan Size
+  intro: Sahadaki çalışmalarımızdan tüm fotoğraf ve videolar
+reports_page:
+  title: Makaleler ve Raporlar
+  intro: Derneğin çalışmalarından makaleler, analizler ve indirilebilir saha raporları
+  empty: Bu dilde henüz yayınlanmış makale veya rapor yok.
+bank_labels:
+  holder: Müşteri Adı
+  swift: Banka Swift Kodu
+  bank: Banka Adı
+  branch_name: Şube Adı
+  account: Hesap No
+  iban: IBAN Numarası
+  currency: Para Birimi
+  branch: Şube

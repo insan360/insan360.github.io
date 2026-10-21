@@ -1,0 +1,41 @@
+# Contact details, bank accounts and social links used on every page.
+
+name: İnsanlık Eli Yardımlaşma ve Dayanışma Derneği
+short_name: İnsanlık Eli
+url: https://www.insanlik.tr
+default_lang: tr
+languages:
+- tr
+- en
+- ar
+phone: +90 553 547 75 38
+whatsapp: '905535477538'
+email: info@insanlikeli.org
+address: Bulgurlu Mah. İzzettinbey Sok. No:9/2 İç Kapı No:10 Üsküdar/İstanbul
+address_short:
+  en: Üsküdar, Istanbul, Türkiye
+  tr: Üsküdar, İstanbul, Türkiye
+  ar: أوسكودار، إسطنبول، تركيا
+map_url: https://maps.google.com/?q=Bulgurlu+Mah.+%C4%B0zzettinbey+Sok.+No:9/2+%C3%9Csk%C3%BCdar+%C4%B0stanbul
+social:
+  instagram: https://www.instagram.com/insanlikeli
+  facebook: https://www.facebook.com/insanlikeli
+  linkedin: https://www.linkedin.com/company/i%CC%87nsanl%C4%B1k-eli-yard%C4%B1mla%C5%9Fma-ve-dayan%C4%B1%C5%9Fma-derne%C4%9Fi/
+bank:
+  holder: İNSANLIK ELİ YARDIMLAŞMA VE DAYANIŞMA DERNEĞİ
+  swift: ZKBATRISXXX
+  bank: Ziraat Katılım Bankası
+  branch_name: Ümraniye Çarşı İstanbul Şubesi
+  accounts:
+  - account: 224-2505031-1
+    iban: TR44 0020 9000 0250 5031 0000 01
+    currency: TRY
+    branch: Ümraniye Çarşı
+  - account: 224-2505031-2
+    iban: TR17 0020 9000 0250 5031 0000 02
+    currency: EUR
+    branch: Ümraniye Çarşı
+  - account: 224-2505031-3
+    iban: TR87 0020 9000 0250 5031 0000 03
+    currency: USD
+    branch: Ümraniye Çarşı

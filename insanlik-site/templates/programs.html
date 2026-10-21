@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% block title %}{{ t.programs_page.title }}{% endblock %}
+{% block content %}
+{{ m.page_hero(t.home.programs.title, t.home.programs.text, t.home.programs.eyebrow) }}
+<section class="section">
+  <div class="container">
+    <div class="grid grid-4">
+      {% for p in programs %}{{ m.program_card(p) }}{% endfor %}
+    </div>
+  </div>
+</section>
+{{ m.donate_band(t, lang) }}
+{% endblock %}

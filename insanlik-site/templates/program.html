@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% set p = item %}
+{% block title %}{{ p.title }}{% endblock %}
+{% block description %}{{ p.subtitle or p.excerpt }}{% endblock %}
+{% block og_image %}{{ p.image or '/img/hero.jpg' }}{% endblock %}
+{% block content %}
+{{ m.page_hero(p.title, p.subtitle, t.nav.programs, image=p.image) }}
+<section class="section">
+  <div class="container detail-grid">
+    <article class="prose-wrap">
+      <div class="prose">{{ p.body|safe }}</div>
+      {% if p.goals %}
+      <h2 class="h3">{{ t.program_goals }}</h2>
+      <ul class="checks">
+        {% for g in p.goals %}<li>{{ m.icon('check') }}<span>{{ g }}</span></li>{% endfor %}
+      </ul>
+      {% endif %}
+      {% if p.projects %}
+      <h2 class="h3">{{ t.program_projects }}</h2>
+      <div class="grid grid-2">
+        {% for x in p.projects %}{{ m.project_card(x, t) }}{% endfor %}
+      </div>
+      {% endif %}
+      <p><a class="back-link" href="/{{ lang }}/programs/">{{ m.icon('arrow', 'back') }} {{ t.back_programs }}</a></p>
+    </article>
+    <aside class="side">
+      <div class="side-card side-donate">
+        <span class="vm-icon">{{ m.program_icon(p) }}</span>
+        <h2 class="h4">{{ t.support_program }}</h2>
+        <a class="btn btn-amber btn-block" href="/{{ lang }}/donate/">{{ m.icon('heart') }} {{ t.donate_now }}</a>
+      </div>
+    </aside>
+  </div>
+</section>
+{% endblock %}

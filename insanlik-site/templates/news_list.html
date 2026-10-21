@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% block title %}{{ t.news_page.title }}{% endblock %}
+{% block description %}{{ t.news_page.intro }}{% endblock %}
+{% block content %}
+{{ m.page_hero(t.news_page.title, t.news_page.intro, t.nav.news) }}
+<section class="section">
+  <div class="container">
+    {% if news %}
+    <div class="grid grid-3">
+      {% for n in news %}{{ m.news_card(n, lang) }}{% endfor %}
+    </div>
+    {% else %}
+    <div class="empty">{{ m.icon('file') }}<p>{{ t.no_news }}</p></div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

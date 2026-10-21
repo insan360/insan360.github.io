@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% set c = t.contact %}
+{% block title %}{{ t.nav.contact }}{% endblock %}
+{% block description %}{{ c.intro }}{% endblock %}
+{% block content %}
+{{ m.page_hero(c.title, c.intro, c.eyebrow, c.title_highlight) }}
+<section class="section">
+  <div class="container">
+    {{ m.section_head(None, c.section_title, c.section_sub) }}
+    <div class="grid grid-2 contact-cards">
+      <div class="side-card">
+        <h2 class="h4">{{ c.details.title }}</h2>
+        <ul class="contact-list">
+          <li>{{ m.icon('phone') }}<span>{{ c.details.rows[0].label }}</span><a href="tel:{{ site.phone|replace(' ', '') }}" dir="ltr">{{ site.phone }}</a></li>
+          <li>{{ m.icon('mail') }}<span>{{ c.details.rows[1].label }}</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li>{{ m.icon('pin') }}<span>{{ c.details.rows[2].label }}</span><a href="{{ site.map_url }}" target="_blank" rel="noopener">{{ site.address }}</a></li>
+        </ul>
+        <a class="btn btn-whatsapp btn-block" href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener">{{ m.icon('chat') }} {{ c.details.button }}</a>
+      </div>
+      <div class="side-card">
+        <h2 class="h4">{{ c.hours.title }}</h2>
+        <ul class="contact-list">
+          {% for r in c.hours.rows %}<li>{{ m.icon('clock') }}<span>{{ r.label }}</span><b>{{ r.value }}</b></li>{% endfor %}
+        </ul>
+        <a class="btn btn-primary btn-block" href="mailto:{{ site.email }}">{{ m.icon('mail') }} {{ c.hours.button }}</a>
+      </div>
+    </div>
+    <p class="center"><a class="btn btn-outline" href="{{ site.map_url }}" target="_blank" rel="noopener">{{ m.icon('pin') }} {{ t.open_map }}</a></p>
+  </div>
+</section>
+{% endblock %}

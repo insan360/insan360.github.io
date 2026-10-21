@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% block title %}{% endblock %}
+{% block description %}{{ t.home.hero_sub }}{% endblock %}
+{% block content %}
+{% set h = t.home %}
+<section class="hero">
+  <div class="container hero-inner">
+    <h1><span class="hl">{{ h.hero_highlight }}</span><br>{{ h.hero_title }}</h1>
+    <p class="lead">{{ h.hero_sub }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-amber btn-lg" href="/{{ lang }}/projects/">{{ h.hero_cta }} {{ m.icon('arrow', 'flip') }}</a>
+      <a class="btn btn-ghost btn-lg" href="/{{ lang }}/donate/">{{ m.icon('heart') }} {{ t.nav.donate }}</a>
+    </div>
+    <ul class="trust">
+      {% for x in h.trust %}<li>{{ m.icon('shield') }} {{ x }}</li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="counters-wrap">
+  <div class="container">
+    <ul class="counters" style="--n: {{ h.counters|length }}">
+      {% for c in h.counters %}
+      <li>
+        <strong><span class="count" data-to="{{ c.value }}">{{ '{:,}'.format(c.value).replace(',', '.') if lang == 'tr' else '{:,}'.format(c.value) }}</span>{{ c.suffix }}</strong>
+        <span class="c-label">{{ c.label }}</span>
+        <span class="c-sub">{{ c.sub }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container about-grid">
+    <div>
+      <span class="eyebrow">{{ h.about.eyebrow }}</span>
+      <h2>{{ h.about.title }}</h2>
+      <p class="text-lg">{{ h.about.text }}</p>
+      <a class="btn btn-primary" href="/{{ lang }}/about/">{{ h.about.more }} {{ m.icon('arrow', 'flip') }}</a>
+    </div>
+    <div class="vm-cards">
+      {% for v in h.vision_mission %}
+      <div class="vm-card">
+        <span class="vm-icon">{{ m.icon('eye' if loop.first else 'target') }}</span>
+        <h3>{{ v.title }}</h3>
+        <p>{{ v.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint" id="programs">
+  <div class="container">
+    {{ m.section_head(h.programs.eyebrow, h.programs.title, h.programs.text) }}
+    <div class="grid grid-4">
+      {% for p in programs %}{{ m.program_card(p) }}{% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if news %}
+<section class="section">
+  <div class="container">
+    <div class="section-head split">
+      <div>
+        <span class="eyebrow">{{ h.news.eyebrow if h.news else t.nav.news }}</span>
+        <h2>{{ h.news.title if h.news else t.news_page.title }}</h2>
+        {% if h.news %}<p>{{ h.news.text }}</p>{% endif %}
+      </div>
+      <a class="btn btn-outline" href="/{{ lang }}/news/">{{ t.view_all }} {{ m.icon('arrow', 'flip') }}</a>
+    </div>
+    <div class="grid grid-3">
+      {% for n in news[:3] %}{{ m.news_card(n, lang) }}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if h.media and media %}
+<section class="section">
+  <div class="container">
+    <div class="section-head split">
+      <div>
+        <span class="eyebrow">{{ h.media.eyebrow }}</span>
+        <h2>{{ h.media.title }}</h2>
+        <p>{{ h.media.text }}</p>
+      </div>
+      <a class="btn btn-outline" href="/{{ lang }}/media/">{{ t.view_all }} {{ m.icon('arrow', 'flip') }}</a>
+    </div>
+    <div class="media-grid compact">
+      {% for x in media[:4] %}
+      <a href="{{ x.src }}" class="gallery-item" data-lightbox><img src="{{ x.src }}" alt="{{ x.title }}" loading="lazy"></a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{{ m.donate_band(t, lang) }}
+{% endblock %}

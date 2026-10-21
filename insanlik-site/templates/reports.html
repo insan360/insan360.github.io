@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% block title %}{{ t.reports_page.title }}{% endblock %}
+{% block description %}{{ t.reports_page.intro }}{% endblock %}
+{% block content %}
+{{ m.page_hero(t.reports_page.title, t.reports_page.intro, t.nav.reports) }}
+<section class="section">
+  <div class="container">
+    <div class="empty">{{ m.icon('file') }}<p>{{ t.reports_page.empty }}</p></div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% block title %}404{% endblock %}
+{% block content %}
+<section class="section notfound">
+  <div class="container narrow center">
+    <p class="big404">404</p>
+    {% for l in langs %}
+    <div class="nf-lang" lang="{{ l }}" dir="{{ T[l].dir }}">
+      <h1 class="h3">{{ T[l].notfound.title }}</h1>
+      <p>{{ T[l].notfound.text }} <a href="/{{ l }}/">{{ T[l].notfound.home }}</a></p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

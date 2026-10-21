@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% set x = item %}
+{% block title %}{{ x.title }}{% endblock %}
+{% block description %}{{ x.excerpt }}{% endblock %}
+{% block og_image %}{{ x.image or '/img/hero.jpg' }}{% endblock %}
+{% block content %}
+{{ m.page_hero(x.title, x.place, x.program_item.title if x.program_item else t.nav.projects, image=x.image) }}
+<section class="section">
+  <div class="container detail-grid">
+    <article class="prose-wrap">
+      <h2 class="h3">{{ t.project.overview }}</h2>
+      <div class="prose">{{ x.body|safe }}</div>
+      {% if x.objectives %}
+      <h2 class="h3">{{ t.project.objectives }}</h2>
+      <ul class="checks">
+        {% for o in x.objectives %}<li>{{ m.icon('check') }}<span>{{ o }}</span></li>{% endfor %}
+      </ul>
+      {% endif %}
+      {% if x.instagram %}
+      <p><a class="btn btn-outline" href="{{ x.instagram }}" target="_blank" rel="noopener">{{ m.icon('instagram') }} {{ t.instagram }}</a></p>
+      {% endif %}
+      <p><a class="back-link" href="/{{ lang }}/projects/">{{ m.icon('arrow', 'back') }} {{ t.back_projects }}</a></p>
+    </article>
+    <aside class="side">
+      <div class="side-card">
+        <h2 class="h4">{{ t.project.specs }}</h2>
+        <dl class="specs">
+          {% if x.program_item %}
+          <dt>{{ t.project.program }}</dt>
+          <dd>{% if x.program_item.url %}<a href="{{ x.program_item.url }}">{{ x.program_item.title }}</a>{% else %}{{ x.program_item.title }}{% endif %}</dd>
+          {% endif %}
+          {% if x.place %}<dt>{{ t.project.place }}</dt><dd>{{ x.place }}</dd>{% endif %}
+        </dl>
+      </div>
+      {% if x.impact %}
+      <div class="side-card side-donate">
+        <span class="vm-icon">{{ m.icon('award') }}</span>
+        <h2 class="h4">{{ t.project.impact }}</h2>
+        <p>{{ x.impact }}</p>
+        <a class="btn btn-amber btn-block" href="/{{ lang }}/donate/">{{ m.icon('heart') }} {{ t.donate_now }}</a>
+      </div>
+      {% endif %}
+    </aside>
+  </div>
+</section>
+{% endblock %}

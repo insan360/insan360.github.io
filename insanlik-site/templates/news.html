@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% set n = item %}
+{% block title %}{{ n.title }}{% endblock %}
+{% block description %}{{ n.excerpt }}{% endblock %}
+{% block og_image %}{{ n.image or '/img/hero.jpg' }}{% endblock %}
+{% block content %}
+<article class="article">
+  <header class="article-head">
+    <div class="container narrow">
+      <a class="back-link" href="/{{ lang }}/news/">{{ m.icon('arrow', 'back') }} {{ t.back_news }}</a>
+      {% if n.category %}<span class="badge">{{ n.category }}</span>{% endif %}
+      <h1>{{ n.title }}</h1>
+      <p class="meta">{{ m.icon('calendar') }} <time datetime="{{ n.date.isoformat() }}">{{ n.date|date(lang) }}</time></p>
+    </div>
+  </header>
+  <div class="container narrow">
+    {% if n.image %}
+    <a href="{{ n.image }}" class="article-image" data-lightbox><img src="{{ n.image }}" alt="{{ n.title }}"></a>
+    {% endif %}
+    <div class="prose">{{ n.body|safe }}</div>
+    {% if n.gallery %}
+    <h2 class="h3">{{ t.gallery }}</h2>
+    <div class="media-grid">
+      {% for g in n.gallery %}
+      <a href="{{ g }}" class="gallery-item" data-lightbox><img src="{{ g }}" alt="{{ n.title }} ({{ loop.index }})" loading="lazy"></a>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if n.instagram %}
+    <p><a class="btn btn-outline" href="{{ n.instagram }}" target="_blank" rel="noopener">{{ m.icon('instagram') }} {{ t.instagram }}</a></p>
+    {% endif %}
+  </div>
+</article>
+{% if more %}
+<section class="section section-tint">
+  <div class="container">
+    <div class="section-head split">
+      <h2>{{ t.news_page.title }}</h2>
+      <a class="btn btn-outline" href="/{{ lang }}/news/">{{ t.view_all }} {{ m.icon('arrow', 'flip') }}</a>
+    </div>
+    <div class="grid grid-3">
+      {% for x in more %}{{ m.news_card(x, lang) }}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% endblock %}

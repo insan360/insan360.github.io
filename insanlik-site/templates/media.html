@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% block title %}{{ t.media_page.title }}{% endblock %}
+{% block description %}{{ t.media_page.intro }}{% endblock %}
+{% block content %}
+{{ m.page_hero(t.media_page.title, t.media_page.intro, t.nav.media) }}
+<section class="section">
+  <div class="container">
+    {% if media %}
+    <div class="media-grid">
+      {% for x in media %}
+      <figure class="gallery-figure">
+        <a href="{{ x.src }}" class="gallery-item" data-lightbox><img src="{{ x.src }}" alt="{{ x.title }}" loading="lazy"></a>
+        {% if x.title %}<figcaption><a href="{{ x.url }}">{{ x.title }}</a></figcaption>{% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty">{{ m.icon('image') }}<p>{{ t.no_media }}</p></div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

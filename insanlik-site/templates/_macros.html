@@ -1,0 +1,118 @@
+{# Small reusable pieces: icons and cards #}
+{% set ICONS = {
+  'menu': '<path d="M4 6h16M4 12h16M4 18h16"/>',
+  'x': '<path d="M18 6 6 18M6 6l12 12"/>',
+  'arrow': '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+  'phone': '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>',
+  'mail': '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+  'pin': '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+  'clock': '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
+  'calendar': '<rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>',
+  'heart': '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
+  'check': '<path d="M20 6 9 17l-5-5"/>',
+  'copy': '<rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>',
+  'shield': '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+  'globe': '<circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/>',
+  'eye': '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
+  'target': '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
+  'award': '<circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/>',
+  'scale': '<path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1ZM2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1ZM7 21h10M12 3v18M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/>',
+  'droplet': '<path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/>',
+  'package': '<path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/>',
+  'stethoscope': '<path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/>',
+  'hammer': '<path d="m15 12-8.37 8.37a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.91-1.91A2 2 0 0 1 19 8.17V7l-2.26-2.26a6 6 0 0 0-4.2-1.76L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.17a2 2 0 0 1 1.42.59L18.5 14.5"/>',
+  'briefcase': '<path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/>',
+  'lifebuoy': '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="m4.93 4.93 4.24 4.24M14.83 9.17l4.24-4.24M14.83 14.83l4.24 4.24M9.17 14.83l-4.24 4.24"/>',
+  'book': '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
+  'moon': '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>',
+  'image': '<rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21"/>',
+  'file': '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4M16 13H8M16 17H8M10 9H8"/>',
+  'external': '<path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
+  'building': '<rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/>',
+  'bank': '<path d="M3 22h18M6 18v-7M10 18v-7M14 18v-7M18 18v-7M12 2l8 5H4z"/>',
+  'chat': '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+  'users': '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
+  'instagram': '<rect width="20" height="20" x="2" y="2" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/>',
+  'facebook': '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
+  'linkedin': '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>',
+} %}
+{% set PROGRAM_ICONS = {'droplet':'droplet','wheat':'package','stethoscope':'stethoscope','hammer':'hammer','briefcase':'briefcase',
+                        'siren':'lifebuoy','child':'book','moon':'moon'} %}
+
+{% macro icon(name, cls='') -%}
+<svg class="icon {{ cls }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{{ ICONS.get(name, ICONS['heart'])|safe }}</svg>
+{%- endmacro %}
+
+{% macro program_icon(p) -%}{{ icon(PROGRAM_ICONS.get(p.icon, 'heart')) }}{%- endmacro %}
+
+{% macro media_box(image, icon_name, alt, cls='') -%}
+{% if image %}
+<div class="media {{ cls }}"><img src="{{ image }}" alt="{{ alt }}" loading="lazy"></div>
+{% else %}
+<div class="media media-icon {{ cls }}" aria-hidden="true">{{ icon(icon_name) }}</div>
+{% endif %}
+{%- endmacro %}
+
+{% macro program_card(p) -%}
+<a class="card program-card" href="{{ p.url }}">
+  {{ media_box(p.image, PROGRAM_ICONS.get(p.icon, 'heart'), p.title) }}
+  <div class="card-body">
+    <h3>{{ p.title }}</h3>
+    {% if p.subtitle %}<p>{{ p.subtitle }}</p>{% endif %}
+    <span class="card-more">{{ icon('arrow', 'flip') }}</span>
+  </div>
+</a>
+{%- endmacro %}
+
+{% macro project_card(x, t) -%}
+<a class="card project-card" href="{{ x.url }}" data-program="{{ x.program or '' }}">
+  {% set pi = PROGRAM_ICONS.get(x.program_item.icon, 'heart') if x.program_item and x.program_item.icon else 'heart' %}
+  {{ media_box(x.image, pi, x.title) }}
+  <div class="card-body">
+    {% if x.program_item %}<span class="badge">{{ x.program_item.title }}</span>{% endif %}
+    <h3>{{ x.title }}</h3>
+    {% if x.place %}<p class="meta">{{ icon('pin') }} {{ x.place }}</p>{% endif %}
+  </div>
+</a>
+{%- endmacro %}
+
+{% macro news_card(n, lang) -%}
+<a class="card news-card" href="{{ n.url }}">
+  {{ media_box(n.image, 'file', n.title) }}
+  <div class="card-body">
+    <p class="meta">{{ icon('calendar') }} <time datetime="{{ n.date.isoformat() }}">{{ n.date|date(lang) }}</time></p>
+    <h3>{{ n.title }}</h3>
+    <p>{{ n.excerpt }}</p>
+  </div>
+</a>
+{%- endmacro %}
+
+{% macro page_hero(title, intro=None, eyebrow=None, highlight=None, image=None) -%}
+<section class="page-hero{{ ' has-image' if image }}"{% if image %} style="--hero-img:url('{{ image }}')"{% endif %}>
+  <div class="container">
+    {% if eyebrow %}<span class="eyebrow light">{{ eyebrow }}</span>{% endif %}
+    <h1>{% if highlight and highlight in title %}{{ title.replace(highlight, '')|trim }} <span class="hl">{{ highlight }}</span>{% else %}{{ title }}{% endif %}</h1>
+    {% if intro %}<p class="lead">{{ intro }}</p>{% endif %}
+  </div>
+</section>
+{%- endmacro %}
+
+{% macro section_head(eyebrow, title, text=None, center=True) -%}
+<div class="section-head{{ ' center' if center }}">
+  {% if eyebrow %}<span class="eyebrow">{{ eyebrow }}</span>{% endif %}
+  {% if title %}<h2>{{ title }}</h2>{% endif %}
+  {% if text %}<p>{{ text }}</p>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro donate_band(t, lang) -%}
+<section class="donate-band">
+  <div class="container donate-band-inner">
+    <div>
+      <h2>{{ t.nav.support }}</h2>
+      <p>{{ t.donate_page.intro }}</p>
+    </div>
+    <a class="btn btn-amber btn-lg" href="/{{ lang }}/donate/">{{ icon('heart') }} {{ t.donate_now }}</a>
+  </div>
+</section>
+{%- endmacro %}

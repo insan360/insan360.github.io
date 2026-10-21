@@ -1,0 +1,239 @@
+# Texts for the English version of the site.
+# Change any text after the colon; keep the indentation as it is.
+
+lang_name: English
+dir: ltr
+skip: Skip to main content
+menu: Menu
+close: Close
+nav:
+  home: Home
+  about: About Us
+  programs: Programs
+  projects: Our Projects
+  media: Media Center
+  news: Our News
+  contact: Contact Us
+  donate: Donate
+  reports: Articles & Reports
+  support: Support Our Message
+  bank: Our Bank Account
+read_more: Read more
+view_all: View all
+back_news: Back to news
+back_projects: All projects
+back_programs: All programs
+donate_now: Donate now
+support_program: Support this programme
+instagram: View on Instagram
+gallery: Photo Gallery
+program_goals: Programme Goals
+program_projects: Projects in this programme
+no_projects: No projects published in this language yet.
+no_news: No news published in this language yet.
+no_media: No photos published yet.
+filter_all: All
+copy_btn: Copy
+copied: Copied
+open_map: Open in Google Maps
+follow: Follow us
+rights: All Rights Reserved
+programs_page:
+  title: Our Programs
+  intro: Focus areas of our humanitarian work.
+donate_page:
+  title: Support Our Message
+  intro: You can support our humanitarian work by bank transfer to the accounts below.
+  bank_title: Bank Details
+  accounts_title: Account Details
+  help: Questions about donating? Write to us on WhatsApp.
+notfound:
+  title: Page not found
+  text: The page you are looking for does not exist or has moved.
+  home: Go to the home page
+project:
+  overview: Project Overview
+  objectives: Strategic Project Objectives
+  specs: Project Specifications
+  impact: The Impact of Your Giving
+  program: Parent Program
+  place: Location
+footer:
+  quick_links: Quick Links
+  tagline: International humanitarian NGO headquartered in Istanbul, Turkey. Supporting communities affected by conflict and disaster across the Middle East and Africa since February 2026.
+  text: Quick Links
+home:
+  hero_highlight: Humanity Hand
+  hero_title: Delivering Impact. Upholding Trust
+  hero_sub: Humanity Hand Aid & Solidarity Association (İnsanlık Eli) is a Turkish non-profit charitable organization dedicated to international relief work. It supports vulnerable communities affected by wars, poverty, disasters, epidemics, and displacement. Through local field teams and trusted partners, the association delivers essential aid with high professionalism, transparency, and dignity.
+  hero_cta: Discover Our Projects
+  trust:
+  - Officially Licensed in Turkey
+  - 100% Financial Transparency
+  - 12 Active Countries
+  counters:
+  - value: 48000
+    suffix: +
+    label: Number of Beneficiaries
+    sub: Direct and documented impact
+  - value: 320
+    suffix: +
+    label: Completed Projects
+    sub: Since establishment
+  - value: 12
+    suffix: ''
+    label: Active Geographic Regions
+    sub: Middle East & Africa
+  - value: 45
+    suffix: +
+    label: Number of Partners
+    sub: Local and international partners
+  about:
+    eyebrow: About Us
+    title: Humanity Hand, Delivering Impact. Upholding Trust
+    text: Humanity Hand Aid & Solidarity Association (İnsanlık Eli Yardımlaşma ve Dayanışma Derneği) is a non-profit humanitarian charitable organization registered in Türkiye (Registration No. 34-296-189). It is dedicated to international relief work, supporting communities and vulnerable groups facing wars, poverty, natural disasters, epidemics, and displacement. The organization operates through field teams and trusted partners to deliver aid with professionalism, transparency, and respect for human dignity.
+    more: Read more about InsanlikEli
+  vision_mission:
+  - title: Our Vision
+    text: A world where every human enjoys dignity and essential opportunities for a safe and decent life.
+  - title: Our Mission
+    text: We work to preserve human dignity and provide essential needs through relief and development programs built on justice, transparency, and professionalism.
+  programs:
+    eyebrow: Our Programs
+    title: Focus Areas of Our Humanitarian Work
+    text: We work through five strategic areas covering the basic needs of affected communities.
+  news:
+    eyebrow: Our News
+    title: Latest Field Updates & Diplomatic Activity
+    text: Follow our ongoing coverage of key visits, agreements, and completed projects
+about:
+  badge: Founded in February 2026
+  title: Delivering Impact. Upholding Trust
+  title_highlight: Upholding Trust
+  intro: Humanity Hand Aid & Solidarity Association or İnsanlık Eli Yardımlaşma ve Dayanışma Derneği is a humanitarian charitable organization registered in the Republic of Türkiye under registration number 34-296-189, as a non-profit institution dedicated to humanitarian and relief work with an international scope, supporting communities and vulnerable groups.
+  vision_mission:
+  - title: Our Vision
+    text: A world in which every person enjoys dignity and access to the essential opportunities for a safe and dignified life.
+  - title: Our Mission
+    text: We work to safeguard human dignity and provide essential needs through relief and development programs based on justice, transparency, and professionalism.
+  values:
+    eyebrow: Our Core Principles
+    title: The Values That Drive Us in the Field
+    items:
+    - title: Human Dignity
+      text: We place human dignity at the heart of every intervention and ensure that assistance never becomes a tool of humiliation or exploitation.
+    - title: Justice & Non-Discrimination
+      text: We provide our services to all without any discrimination based on religion, race, gender, nationality, or affiliation.
+    - title: Transparency
+      text: We manage our financial and administrative resources with clarity and share our information and reports with donors and partners in accordance with best practices.
+    - title: Quality & Impact
+      text: We prioritize the design and implementation of programs that deliver real, measurable impact, rather than merely maintaining a symbolic presence or relying on promotional figures.
+  goals:
+    eyebrow: Strategic Goals
+    title: Six Goals Shaping the Future
+    items:
+    - 'Strengthening Rapid and Effective Humanitarian Response: Enhancing the organization''s capacity for urgent intervention during crises and disasters through a ready-response system that provides food, shelter, and healthcare to those affected by wars and emergencies.'
+    - 'Improving the Quality of Life for Vulnerable Groups and Those Affected by Wars and Natural Disasters: Implementing sustainable programs that address basic needs and provide access to education, healthcare, and psychosocial support, contributing to the restoration of a dignified life for affected populations.'
+    - 'Empowering Affected Families and Strengthening Their Resilience: Developing livelihood and development programs that enable families to become self-reliant and help them overcome the impacts of war, displacement, and poverty.'
+    - Providing Minimum Essential Health and Education Services to Targeted Groups.
+    - 'Building Strategic Local and International Partnerships: Expanding partnerships with humanitarian organizations and donor entities to enhance access to beneficiaries and increase overall humanitarian impact.'
+    - 'Developing Institutional Performance and Ensuring Transparency and Accountability: Strengthening administrative and financial governance and establishing effective monitoring and evaluation systems to ensure optimal use of resources and enhance trust among partners and donors.'
+  org:
+    eyebrow: Our Governance
+    title: Organizational Structure
+    text: A clear management structure ensures prompt decision-making and accountability at all levels.
+    board: Board of Directors
+    director: Executive Director
+    hq:
+      name: HQ
+      departments:
+      - name: Finance Department
+        units:
+        - Financial Reporting & Grants Compliance Unit
+        - Accounting & Treasury Section
+      - name: Programs Department
+        units:
+        - Program
+        - Monitoring & Evaluation (M&E) Unit
+      - name: Operations & Logistics Department
+        units:
+        - Human Resources (HR) Section
+        - IT & Data Security Unit
+        - Procurement & Supply Chain Section
+      - name: International Relations & Fundraising Department
+        units:
+        - Media & Communication Section
+        - Donor Relations Section
+    compliance: Compliance & Internal Audit Office
+    field:
+      name: Field Offices & Regional Coordination
+      offices:
+      - Türkiye & Syria Office
+      - Egypt Field Office
+      - Gaza Field Office
+      - Africa Missions Desk
+  geo:
+    eyebrow: Geographic Presence
+    title: Where We Make an Impact
+    text: Insanlık operates from its headquarters in Turkey, extending its operations to the most vulnerable regions.
+    legend: Countries Where We Work
+    hq: 🇹🇷 Turkey — Headquarters
+    countries:
+    - 🇸🇾 Syria
+    - 🇾🇪 Yemen
+    - 🇸🇴 Somalia
+    - 🇸🇩 Sudan
+    - 🇵🇸 Palestine
+    - 🇱🇧 Lebanon
+    - 🇱🇾 Libya
+    - 🇮🇶 Iraq
+    - 🇲🇦 Morocco
+    - 🇯🇴 Jordan
+    - 🇪🇬 Egypt
+contact:
+  title: We Listen & Share Hope
+  title_highlight: Hope
+  intro: Our channels are open for your inquiries and generous contributions to serve humanity.
+  eyebrow: Contact Channels
+  section_title: We Are Always Happy to Connect
+  section_sub: Our team is here to answer your questions and provide necessary support.
+  details:
+    title: Direct Contact Details
+    rows:
+    - label: 'Phone:'
+      value: +90 553 547 75 38
+    - label: 'Email:'
+      value: info@insanlikeli.org
+    - label: 'Address:'
+      value: Uskudar, Istanbul, Turkey
+    button: Contact Us on WhatsApp
+  hours:
+    title: Official Working Hours
+    rows:
+    - label: 'Monday - Friday:'
+      value: 09:00 - 18:00
+    - label: 'Saturday - Sunday:'
+      value: Weekend Holiday
+    button: Send an Email
+projects_page:
+  title: Our Projects
+  intro: All of our projects across every program and sector
+news_page:
+  title: Latest Updates & News
+  intro: Follow our ongoing coverage of key visits, agreements and completed projects
+media_page:
+  title: From the Field to You
+  intro: All photos and videos from our work in the field
+reports_page:
+  title: Articles & Reports
+  intro: Opinion pieces, analyses and downloadable field reports from our work
+  empty: No articles or reports published in this language yet.
+bank_labels:
+  holder: Customer Name
+  swift: Bank Swift Code
+  bank: Bank Name
+  branch_name: Branch Name
+  account: Account No
+  iban: IBAN Number
+  currency: Currency
+  branch: Branch

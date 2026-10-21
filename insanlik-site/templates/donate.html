@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% set d = t.donate_page %}
+{% set b = site.bank %}
+{% set L = t.bank_labels %}
+{% block title %}{{ d.title }}{% endblock %}
+{% block description %}{{ d.intro }}{% endblock %}
+{% block content %}
+{{ m.page_hero(d.title, d.intro, t.nav.donate) }}
+<section class="section">
+  <div class="container narrow">
+    <div class="side-card bank-card">
+      <h2 class="h4">{{ m.icon('bank') }} {{ d.bank_title }}</h2>
+      <dl class="bank-dl">
+        <dt>{{ L.holder }}</dt><dd>{{ b.holder }} <button type="button" class="copy" data-copy="{{ b.holder }}" data-done="{{ t.copied }}" aria-label="{{ t.copy_btn }}">{{ m.icon('copy') }}<span>{{ t.copy_btn }}</span></button></dd>
+        <dt>{{ L.bank }}</dt><dd>{{ b.bank }}</dd>
+        <dt>{{ L.branch_name }}</dt><dd>{{ b.branch_name }}</dd>
+        <dt>{{ L.swift }}</dt><dd><code>{{ b.swift }}</code> <button type="button" class="copy" data-copy="{{ b.swift }}" data-done="{{ t.copied }}" aria-label="{{ t.copy_btn }}">{{ m.icon('copy') }}<span>{{ t.copy_btn }}</span></button></dd>
+      </dl>
+    </div>
+
+    <h2 class="h3 accounts-title">{{ d.accounts_title }}</h2>
+    <div class="accounts">
+      {% for a in b.accounts %}
+      <div class="account">
+        <span class="currency">{{ a.currency }}</span>
+        <div class="account-body">
+          <span class="label">{{ L.iban }}</span>
+          <code class="iban" dir="ltr">{{ a.iban }}</code>
+          <span class="label">{{ L.account }}: <span dir="ltr">{{ a.account }}</span> · {{ L.branch }}: {{ a.branch }}</span>
+        </div>
+        <button type="button" class="copy copy-lg" data-copy="{{ a.iban|replace(' ', '') }}" data-done="{{ t.copied }}">{{ m.icon('copy') }}<span>{{ t.copy_btn }}</span></button>
+      </div>
+      {% endfor %}
+    </div>
+
+    <p class="center help-line">{{ d.help }}</p>
+    <p class="center"><a class="btn btn-whatsapp" href="https://wa.me/{{ site.whatsapp }}" target="_blank" rel="noopener">{{ m.icon('chat') }} WhatsApp</a></p>
+  </div>
+</section>
+{% endblock %}

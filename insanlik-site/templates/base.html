@@ -1,0 +1,118 @@
+{% import '_macros.html' as m %}
+<!doctype html>
+<html lang="{{ lang }}" dir="{{ t.dir }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% if false %}{% block title %}{% endblock %}{% endif %}
+{% set page_title = self.title()|trim %}
+<title>{% if page_title %}{{ page_title }} | {% endif %}{{ site.short_name }}</title>
+<meta name="description" content="{% block description %}{{ t.footer.text }}{% endblock %}">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+{% for l, u in hreflang.items() %}<link rel="alternate" hreflang="{{ l }}" href="{{ site.url }}{{ u }}">
+{% endfor %}
+<meta property="og:title" content="{% if page_title %}{{ page_title }} | {% endif %}{{ site.short_name }}">
+<meta property="og:description" content="{{ self.description()|trim }}">
+<meta property="og:image" content="{{ site.url }}{% block og_image %}/img/hero.jpg{% endblock %}">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{% if t.dir == 'rtl' %}
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+{% else %}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+{% endif %}
+<link rel="stylesheet" href="/css/style.css">
+<script src="/js/main.js" defer></script>
+</head>
+<body class="lang-{{ lang }} page-{{ ref.split('/')[0] }}">
+<a class="skip" href="#main">{{ t.skip }}</a>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="logo" href="/{{ lang }}/" aria-label="{{ site.short_name }}">
+      <img src="/img/brand/logo-{{ lang }}.png" alt="{{ site.name }}" width="640" height="247">
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="{{ t.menu }}">
+      <ul>
+        <li><a href="/{{ lang }}/about/"{% if ref == 'about' %} aria-current="page"{% endif %}>{{ t.nav.about }}</a></li>
+        <li><a href="/{{ lang }}/programs/"{% if ref.startswith('programs') %} aria-current="page"{% endif %}>{{ t.nav.programs }}</a></li>
+        <li><a href="/{{ lang }}/projects/"{% if ref.startswith('projects') %} aria-current="page"{% endif %}>{{ t.nav.projects }}</a></li>
+        <li><a href="/{{ lang }}/news/"{% if ref.startswith('news') %} aria-current="page"{% endif %}>{{ t.nav.news }}</a></li>
+        <li><a href="/{{ lang }}/media/"{% if ref == 'media' %} aria-current="page"{% endif %}>{{ t.nav.media }}</a></li>
+        <li><a href="/{{ lang }}/contact/"{% if ref == 'contact' %} aria-current="page"{% endif %}>{{ t.nav.contact }}</a></li>
+      </ul>
+      <div class="nav-extra">
+        <div class="lang-switch" role="group" aria-label="Language">
+          {% for l in langs %}
+          <a href="{{ alt[l] }}" lang="{{ l }}" hreflang="{{ l }}"{% if l == lang %} class="active" aria-current="true"{% endif %}>{{ l|upper }}</a>
+          {% endfor %}
+        </div>
+        <a class="btn btn-amber btn-sm" href="/{{ lang }}/donate/">{{ m.icon('heart') }} {{ t.nav.donate }}</a>
+      </div>
+    </nav>
+    <button class="menu-toggle" type="button" aria-controls="main-nav" aria-expanded="false" data-open="{{ t.menu }}" data-close="{{ t.close }}">
+      {{ m.icon('menu', 'i-open') }}{{ m.icon('x', 'i-close') }}<span class="sr">{{ t.menu }}</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a class="footer-brand" href="/{{ lang }}/">
+        <img src="/img/brand/mark.png" alt="" width="48" height="48">
+        <span>{{ site.short_name }}</span>
+      </a>
+      <p class="footer-tagline">{{ t.footer.tagline }}</p>
+      <p>{{ t.footer.text }}</p>
+      <div class="social" aria-label="{{ t.follow }}">
+        <a href="{{ site.social.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">{{ m.icon('instagram') }}</a>
+        <a href="{{ site.social.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">{{ m.icon('facebook') }}</a>
+        <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">{{ m.icon('linkedin') }}</a>
+      </div>
+    </div>
+    <div>
+      <h3>{{ t.footer.quick_links }}</h3>
+      <ul>
+        <li><a href="/{{ lang }}/about/">{{ t.nav.about }}</a></li>
+        <li><a href="/{{ lang }}/projects/">{{ t.nav.projects }}</a></li>
+        <li><a href="/{{ lang }}/news/">{{ t.nav.news }}</a></li>
+        <li><a href="/{{ lang }}/media/">{{ t.nav.media }}</a></li>
+        <li><a href="/{{ lang }}/reports/">{{ t.nav.reports }}</a></li>
+        <li><a href="/{{ lang }}/donate/">{{ t.nav.support }}</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>{{ t.nav.programs }}</h3>
+      <ul>
+        {% for p in programs %}<li><a href="{{ p.url }}">{{ p.title }}</a></li>{% endfor %}
+        {% if not programs %}<li><a href="/{{ lang }}/programs/">{{ t.nav.programs }}</a></li>{% endif %}
+      </ul>
+    </div>
+    <div>
+      <h3>{{ t.nav.contact }}</h3>
+      <ul class="footer-contact">
+        <li>{{ m.icon('pin') }}<a href="{{ site.map_url }}" target="_blank" rel="noopener">{{ site.address_short[lang] }}</a></li>
+        <li>{{ m.icon('mail') }}<a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <li>{{ m.icon('phone') }}<a href="tel:{{ site.phone|replace(' ', '') }}" dir="ltr">{{ site.phone }}</a></li>
+        <li>{{ m.icon('bank') }}<a href="/{{ lang }}/donate/">{{ t.nav.bank }}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">© {{ year }} {{ site.name }} · {{ t.rights }}</div>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="{{ t.gallery }}">
+  <button type="button" class="lightbox-close" aria-label="{{ t.close }}">{{ m.icon('x') }}</button>
+  <img src="" alt="">
+</dialog>
+</body>
+</html>

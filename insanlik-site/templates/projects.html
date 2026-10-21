@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as m %}
+{% block title %}{{ t.projects_page.title }}{% endblock %}
+{% block description %}{{ t.projects_page.intro }}{% endblock %}
+{% block content %}
+{{ m.page_hero(t.projects_page.title, t.projects_page.intro, t.nav.projects) }}
+<section class="section">
+  <div class="container">
+    {% if projects %}
+    {% set used = [] %}
+    {% for x in projects %}{% if x.program and x.program not in used %}{% set _ = used.append(x.program) %}{% endif %}{% endfor %}
+    {% if used|length > 1 %}
+    <div class="filters" role="group" aria-label="{{ t.nav.programs }}">
+      <button type="button" class="chip-btn active" data-filter="">{{ t.filter_all }}</button>
+      {% for slug in used %}
+        {% set pi = (programs|selectattr('slug', 'equalto', slug)|first) %}
+        <button type="button" class="chip-btn" data-filter="{{ slug }}">{{ pi.title if pi else slug }}</button>
+      {% endfor %}
+    </div>
+    {% endif %}
+    <div class="grid grid-3" id="project-list">
+      {% for x in projects %}{{ m.project_card(x, t) }}{% endfor %}
+    </div>
+    {% else %}
+    <div class="empty">{{ m.icon('package') }}<p>{{ t.no_projects }}</p></div>
+    {% endif %}
+  </div>
+</section>
+{{ m.donate_band(t, lang) }}
+{% endblock %}
